@@ -1,0 +1,15 @@
+---
+- name: install pgdg-centos10-10-2 PostgreSQL repository
+  yum:
+    name: https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-6-x86_64/pgdg-centos10-10-2.noarch.rpm
+    
+    state: present
+  become: yes
+  when: ansible_distribution == 'CentOS' and ansible_distribution_version is version_compare('7.0', '<')
+
+- name: install pgdg-centos10-10-2 PostgreSQL repository
+  yum:
+    name: https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
+    state: present
+  become: yes
+  when: ansible_distribution == 'CentOS' and ansible_distribution_version is version_compare('7.0', '>=')

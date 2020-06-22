@@ -25,7 +25,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - jaredboone.postgresql-pgdg95
+         - jaredboone.postgresql-pgdg10
 
 License
 -------
